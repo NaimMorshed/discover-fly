@@ -15,10 +15,14 @@ function updateSpinner(classType, spin) {
 
     if (classType == 'firstClass') {
         if (spin == 'positiveSpin') {
-            firstClassInput.value = currentFirstClassInput + 1;
-            subtotal.innerText = subtotalCalculator();
-            vat.innerText = vatCalculator();
-            total.innerText = totalCalculator();
+            if (currentFirstClassInput <= -1) {
+                firstClassInput.value = 0;
+            } else {
+                firstClassInput.value = currentFirstClassInput + 1;
+                subtotal.innerText = subtotalCalculator();
+                vat.innerText = vatCalculator();
+                total.innerText = totalCalculator();
+            }
         } else if (spin == 'negativeSpin') {
             if (currentFirstClassInput > 0) {
                 firstClassInput.value = currentFirstClassInput - 1;
@@ -29,10 +33,14 @@ function updateSpinner(classType, spin) {
         }
     } else if (classType == 'economyClass') {
         if (spin == 'positiveSpin') {
-            economyClassInput.value = currentEconomyClassInput + 1;
-            subtotal.innerText = subtotalCalculator();
-            vat.innerText = vatCalculator();
-            total.innerText = totalCalculator();
+            if (currentEconomyClassInput <= -1) {
+                economyClassInput.value = 0;
+            } else {
+                economyClassInput.value = currentEconomyClassInput + 1;
+                subtotal.innerText = subtotalCalculator();
+                vat.innerText = vatCalculator();
+                total.innerText = totalCalculator();
+            }
         } else if (spin == 'negativeSpin') {
             if (currentEconomyClassInput > 0) {
                 economyClassInput.value = currentEconomyClassInput - 1;
@@ -57,6 +65,18 @@ function totalCalculator() {
     const currentVat = parseFloat(vat.innerText);
     return currentSubtotal + currentVat;
 }
+function setConfirmationBox() {
+    const currentSubtotal = parseFloat(document.getElementById('subtotal').innerText);
+    const currentVat = parseFloat(document.getElementById('vat').innerText);
+    const currentTotal = parseFloat(document.getElementById('total').innerText);
+    const currentFirstClassPassenger = parseFloat(document.getElementById('firstClassInput').value);
+    const currentEconomyClassPassenger = parseFloat(document.getElementById('economyClassInput').value);
+    document.getElementById('firstClassPassenger').innerText = currentFirstClassPassenger;
+    document.getElementById('economyClassPassenger').innerText = currentEconomyClassPassenger;
+    document.getElementById('confirmSubtotal').innerText = currentSubtotal;
+    document.getElementById('confirmVat').innerText = currentVat;
+    document.getElementById('confirmTotal').innerText = currentTotal;
+}
 
 firstClassPlus.addEventListener('click', function () {
     updateSpinner('firstClass', 'positiveSpin')
@@ -70,9 +90,14 @@ economyClassPlus.addEventListener('click', function () {
 economyClassMinus.addEventListener('click', function () {
     updateSpinner('economyClass', 'negativeSpin')
 });
-
-function bookNowButton() {
+document.getElementById('bookNowButton').addEventListener('click', function () {
     document.getElementById('mainPage').style.display = 'none';
-    document.getElementById('confirmationPage').style.display = 'block';
-}
+    setConfirmationBox();
+    document.getElementById('confirmation-page').style.display = 'block';
+});
+document.getElementById('confirmBook').addEventListener('click', function () {
+    //document.getElementById('confirmation-page').style.display = 'none';
+    document.getElementById('booking-confirmed').style.display = 'flex';
+});
+
 

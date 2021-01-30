@@ -97,7 +97,7 @@
                     </div>
                 </div>
             </div>
-            <button onclick="bookNowButton()" class="btn-style">Book Now</button>
+            <button id="bookNowButton" class="btn-style">Book Now</button>
         </div>
 
         <div class="booking-content">
@@ -111,21 +111,43 @@
     <!--Confirmation Section-->
     <main id="confirmation-page">
         <section class="container-2">
+            <div>
+                
+            </div>
             <div class="container-2-grid">
+                <div class="center-flex-items margin-bottom-40">
+                    <img src="images/departure.png" alt="">
+                    <p class="margin-left-20 departure-arrival-text">Departure<br><span class="flying-time">10:40</span></p>
+                </div>
+                <div class="center-flex-items margin-bottom-40">
+                    <img src="images/arrival.png" alt="">
+                    <p class="margin-left-20 departure-arrival-text">Arrival<br><span class="flying-time">22:30</span></p>
+                </div>
+                
                 <p class="text-left">First Class Passenger</p>
-                <p class="text-right">x0</p>
+                <p class="text-right">x <span id="firstClassPassenger">0</span></p>
                 <p class="text-left">Economy Passenger</p>
-                <p class="text-right margin-bottom">x0</p>
+                <p class="text-right margin-bottom">x <span id="economyClassPassenger">0</span></p>
                 <p class="text-left">Subtotal</p>
-                <p class="text-right">$0</p>
+                <p class="text-right">$ <span id="confirmSubtotal">0</span></p>
+                <p class="text-left">Discount</p>
+                <p class="text-right">$ 0</p>
                 <p class="text-left">Charge 10% VAT</p>
-                <p class="text-right margin-bottom">$0</p>
+                <p class="text-right margin-bottom">$ <span id="confirmVat">0</span></p>
                 <hr class="horizontal-line">
                 <hr>
                 <h4 class="text-left">Total</h4>
-                <p class="text-right margin-bottom">$0</p>
+                <p class="text-right margin-bottom">$ <span id="confirmTotal">0</span></p>
             </div>
-            <button class="btn-style">Confirm Booking</button>
+            <button id="confirmBook" class="btn-style">Confirm Booking</button>
+        </section>
+    </main>
+
+    <!--Booking Confirmed-->
+    <main>
+        <section id="booking-confirmed">
+            <img src="images/check.png" alt="">
+            <p>Your booking has been confirmed.</p>
         </section>
     </main>
 

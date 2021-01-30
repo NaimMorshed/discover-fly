@@ -10,8 +10,7 @@ body{
     background:url("images/bg.png");
     background-repeat: no-repeat;
     background-position: center center;
-    background-attachment: scroll;
-    background-size: cover;
+    background-attachment: fixed;
 }
 
 nav{
@@ -131,9 +130,9 @@ nav ul li a:hover, a.active{
     justify-content: space-between;
 }
 .container-2{
-    width: 400px;
+    width: 520px;
     border-radius: 10px;
-    height: 280px;
+    height: 460px;
     margin: 0 auto;
     background-color: #fff;
     border: 1px solid #ddd;
@@ -164,4 +163,55 @@ nav ul li a:hover, a.active{
 }
 .container-2 hr{
     border-top: 2px dashed #A2A9C3;
+}
+#confirmation-page{
+    display: none;
+}
+#booking-confirmed{
+    width: 320px;
+    border-radius: 10px;
+    height: 50px;
+    margin: 0 auto;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+    box-sizing: border-box;    
+
+    position: absolute;
+    left: 50%;
+    top: 10%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    grid-gap: 10px;
+    display: none;
+}
+#booking-confirmed p{
+    font-weight: 500;
+}
+.center-flex-items{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.margin-bottom-40{
+    border: 1px solid gray;
+    margin-bottom: 50px;
+    padding: 20px;
+}
+.margin-left-20{
+    margin-left: 20px;
+}
+.departure-arrival-text{
+    font-size: 20px;
+    color: grey;
+}
+.flying-time{
+    font-size: 28px;
+    color: black;
+    font-weight: 450;
 }
