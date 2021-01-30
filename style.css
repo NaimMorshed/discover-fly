@@ -130,3 +130,38 @@ nav ul li a:hover, a.active{
     display: flex;
     justify-content: space-between;
 }
+.container-2{
+    width: 400px;
+    border-radius: 10px;
+    height: 280px;
+    margin: 0 auto;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 25px;
+    border-radius: 5px;
+    box-sizing: border-box;    
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+.container-2-grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+.text-right{
+    text-align: right;
+    font-weight: 500;
+    margin: 5px;
+}
+.text-left{
+    text-align: left;
+}
+.margin-bottom{
+    margin-bottom: 20px;
+}
+.container-2 hr{
+    border-top: 2px dashed #A2A9C3;
+}

@@ -27,12 +27,12 @@
     </header>
 
     <!--Booking Section-->
-    <main class="main-content container">
+    <main id="mainPage" class="main-content container">
         <div class="booking-form">
             <h3>Booking Flights</h3>
             <div class="input-group">
                 <label for="">Flying From</label>
-                <input class="inp-style" type="text" name="" placeholder="Dhake, Bangladesh">
+                <input class="inp-style" type="text" name="" placeholder="Dhaka, Bangladesh">
             </div>
             <div class="input-group">
                 <label for="">Flying To</label>
@@ -51,18 +51,18 @@
             <div class="input-group f-class">
                 <div>
                     <label for="">First Class ($150)</label>
-                    <input id="firstClassInput" class="inp-style inp-width" type="number" name="">
+                    <input id="firstClassInput" class="inp-style inp-width" type="number" name="" value="0">
                 </div>
                 <div class="plus-minus-btn">
                     <button id="firstClassPlus">+</button>
                     <button id="firstClassMinus">-</button>
                 </div>
             </div>
-            
+
             <div class="input-group f-class">
                 <div>
                     <label for="">Economy ($100)</label>
-                    <input id="economyClassInput" class="inp-style inp-width" type="number" name="">
+                    <input id="economyClassInput" class="inp-style inp-width" type="number" name="" value="0">
                 </div>
                 <div class="plus-minus-btn">
                     <button id="economyClassPlus">+</button>
@@ -75,7 +75,7 @@
                         <p>Subtotal</p>
                     </div>
                     <div class="right">
-                        <p>$<span id="subtotal">500</span></p>
+                        <p>$<span id="subtotal">0</span></p>
                     </div>
                 </div>
 
@@ -84,7 +84,7 @@
                         <p>Charge 10% VAT</p>
                     </div>
                     <div class="right">
-                        <p>$<span id="vat">50</span></p>
+                        <p>$<span id="vat">0</span></p>
                     </div>
                 </div>
                 <hr>
@@ -93,18 +93,41 @@
                         <h4>Total</h4>
                     </div>
                     <div class="right">
-                        <p>$<span id="total">550</span></p>
+                        <p>$<span id="total">0</span></p>
                     </div>
                 </div>
             </div>
-            <button class="btn-style">Book Now</button>
+            <button onclick="bookNowButton()" class="btn-style">Book Now</button>
         </div>
 
         <div class="booking-content">
             <h1>discover <br> around the world</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicingelit. Provident voluptatibus quam fuga laborumalias veniam libero autem quasi maxime ullam vero nama imi dolor, architecto ab facilis eaque deserunt nobise voluptatibus quam</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicingelit. Provident voluptatibus quam fuga laborumalias
+                veniam libero autem quasi maxime ullam vero nama imi dolor, architecto ab facilis eaque deserunt nobise
+                voluptatibus quam</p>
         </div>
-    </section>
+    </main>
+
+    <!--Confirmation Section-->
+    <main id="confirmation-page">
+        <section class="container-2">
+            <div class="container-2-grid">
+                <p class="text-left">First Class Passenger</p>
+                <p class="text-right">x0</p>
+                <p class="text-left">Economy Passenger</p>
+                <p class="text-right margin-bottom">x0</p>
+                <p class="text-left">Subtotal</p>
+                <p class="text-right">$0</p>
+                <p class="text-left">Charge 10% VAT</p>
+                <p class="text-right margin-bottom">$0</p>
+                <hr class="horizontal-line">
+                <hr>
+                <h4 class="text-left">Total</h4>
+                <p class="text-right margin-bottom">$0</p>
+            </div>
+            <button class="btn-style">Confirm Booking</button>
+        </section>
+    </main>
 
     <!--JavaScript-->
     <script src="script.js"></script>
